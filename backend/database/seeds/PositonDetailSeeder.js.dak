@@ -1,0 +1,164 @@
+'use strict'
+
+/*
+|--------------------------------------------------------------------------
+| PositonDetailSeeder
+|--------------------------------------------------------------------------
+|
+| Make use of the Factory instance to seed database with dummy data or
+| make use of Lucid models directly.
+|
+*/
+
+/** @type {import('@adonisjs/lucid/src/Factory')} */
+const Factory = use('Factory')
+const PositonDetail = use('App/Models/PositonDetail')
+
+class PositonDetailSeeder {
+  async run () {
+    await PositonDetail.createMany([
+      {
+        MaNhanVien: "NV001",
+        MaCV: "CV01",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV002",
+        MaCV: "CV02",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV003",
+        MaCV: "CV03",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV004",
+        MaCV: "CV03",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV005",
+        MaCV: "CV03",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV006",
+        MaCV: "CV04",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV007",
+        MaCV: "CV04",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV008",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV009",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV010",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV011",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV012",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV013",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV014",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV015",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV016",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV017",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV018",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV019",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      },
+      {
+        MaNhanVien: "NV020",
+        MaCV: "CV05",
+        NgayBatDau: "2014-01-01",
+        NgayKetThuc: "2020-01-01",
+        LyDo: "student"
+      }
+    ])
+  }
+}
+
+module.exports = PositonDetailSeeder

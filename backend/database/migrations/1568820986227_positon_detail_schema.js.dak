@@ -1,0 +1,25 @@
+'use strict'
+
+/** @type {import('@adonisjs/lucid/src/Schema')} */
+const Schema = use('Schema')
+
+class PositonDetailSchema extends Schema {
+  up () {
+    this.create('positon_details', (table) => {
+      table.increments()
+      table.string('MaNhanVien', 5).notNullable().references('MaNhanVien').inTable('employees')
+      table.string('MaCV').references('MaCV').inTable('labour_contracts')
+      table.datetime('NgayBatDau').notNullable()
+      table.datetime('NgayKetThuc').notNullable()
+      table.string("LyDo", 255).notNullable().collate('utf8_unicode_ci')
+
+      table.timestamps(true, true)
+    })
+  }
+
+  down () {
+    this.dropIfExists('positon_details')
+  }
+}
+
+module.exports = PositonDetailSchema

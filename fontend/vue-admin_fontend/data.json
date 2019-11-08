@@ -1,0 +1,189 @@
+{
+  "user": {
+    "id": 1,
+    "email": "admin@gmail.com",
+    "created_at": "2019-11-08 17:31:33",
+    "updated_at": "2019-11-08 17:31:33"
+  },
+  "results": [{
+    "id": 1,
+    "name_per": "Full",
+    "created_at": "2019-11-08 17:31:33",
+    "updated_at": "2019-11-08 17:31:33",
+    "permisionDetail": [{
+      "id": 2,
+      "permision_id": 1,
+      "action_name": "Edit post",
+      "action_code": "EDIT",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 3,
+      "permision_id": 1,
+      "action_name": "Delete post",
+      "action_code": "DELETE",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 4,
+      "permision_id": 1,
+      "action_name": "View post",
+      "action_code": "VIEW",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }]
+  }, {
+    "id": 2,
+    "name_per": "Admin",
+    "created_at": "2019-11-08 17:31:33",
+    "updated_at": "2019-11-08 17:31:33",
+    "permisionDetail": [{
+      "id": 5,
+      "permision_id": 2,
+      "action_name": "Create post",
+      "action_code": "CREATE",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 6,
+      "permision_id": 2,
+      "action_name": "Edit post",
+      "action_code": "EDIT",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 7,
+      "permision_id": 2,
+      "action_name": "Delete post",
+      "action_code": "DELETE",
+      "check_action": 0,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 8,
+      "permision_id": 2,
+      "action_name": "View post",
+      "action_code": "VIEW",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }]
+  }, {
+    "id": 3,
+    "name_per": "Edit",
+    "created_at": "2019-11-08 17:31:33",
+    "updated_at": "2019-11-08 17:31:33",
+    "permisionDetail": [{
+      "id": 9,
+      "permision_id": 3,
+      "action_name": "Create post",
+      "action_code": "CREATE",
+      "check_action": 0,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 10,
+      "permision_id": 3,
+      "action_name": "Edit post",
+      "action_code": "EDIT",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 11,
+      "permision_id": 3,
+      "action_name": "Delete post",
+      "action_code": "DELETE",
+      "check_action": 0,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 12,
+      "permision_id": 3,
+      "action_name": "View post",
+      "action_code": "VIEW",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }]
+  }, {
+    "id": 4,
+    "name_per": "Create",
+    "created_at": "2019-11-08 17:31:33",
+    "updated_at": "2019-11-08 17:31:33",
+    "permisionDetail": [{
+      "id": 13,
+      "permision_id": 4,
+      "action_name": "Create post",
+      "action_code": "CREATE",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 14,
+      "permision_id": 4,
+      "action_name": "Edit post",
+      "action_code": "EDIT",
+      "check_action": 0,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }, {
+      "id": 16,
+      "permision_id": 4,
+      "action_name": "View post",
+      "action_code": "VIEW",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:38",
+      "updated_at": "2019-11-08 17:31:38"
+    }]
+  }, {
+    "id": 5,
+    "name_per": "Only View",
+    "created_at": "2019-11-08 17:31:33",
+    "updated_at": "2019-11-08 17:31:33",
+    "permisionDetail": [{
+      "id": 18,
+      "permision_id": 5,
+      "action_name": "Edit post",
+      "action_code": "EDIT",
+      "check_action": 0,
+      "created_at": "2019-11-08 17:31:39",
+      "updated_at": "2019-11-08 17:31:39"
+    }, {
+      "id": 19,
+      "permision_id": 5,
+      "action_name": "Delete post",
+      "action_code": "DELETE",
+      "check_action": 0,
+      "created_at": "2019-11-08 17:31:39",
+      "updated_at": "2019-11-08 17:31:39"
+    }, {
+      "id": 20,
+      "permision_id": 5,
+      "action_name": "View post",
+      "action_code": "VIEW",
+      "check_action": 1,
+      "created_at": "2019-11-08 17:31:39",
+      "updated_at": "2019-11-08 17:31:39"
+    }]
+  }, {
+    "id": 6,
+    "name_per": "NoF",
+    "created_at": "2019-11-08 17:31:33",
+    "updated_at": "2019-11-08 17:31:33",
+    "permisionDetail": [{
+      "id": 21,
+      "permision_id": 6,
+      "action_name": "Create post",
+      "action_code": "CREATE",
+      "check_action": 0,
+      "created_at": "2019-11-08 17:31:39",
+      "updated_at": "2019-11-08 17:31:39"
+    }]
+  }]
+}
