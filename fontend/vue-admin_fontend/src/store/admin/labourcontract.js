@@ -1,7 +1,7 @@
 // import router from '../router';
-import Vue from 'vue';
+import Vue from "vue";
 // eslint-disable-next-line import/no-cycle
-import HTTP from '../../https';
+import HTTP from "../../https";
 
 export default {
   namespaced: true,
@@ -14,67 +14,73 @@ export default {
     currentLabourContractLiteracy: null,
     currentLabourContractInsurranceEmployeeID: null,
 
-    errorLabourContract: null,
+    errorLabourContract: null
   },
   actions: {
     async fetchLabourContracts({ commit }) {
       try {
-        return HTTP().get('/lcontracts')
-        .then(({ data }) => {
-          commit('setLabourContracts', data);
-          commit('setLabourContractsError', null);
-          // console.log(data)
-        })
-        .catch(function (error) {
-          if (error.response) {
-            commit('setLabourContracts', null);
-            commit('setLabourContractsError', error.response.data.message);
-            // console.log(error.response.data.message);
-            // console.log(error.response.status);
-            // console.log(error.response.headers);
-          }
-        });
+        return HTTP()
+          .get("/lcontracts")
+          .then(({ data }) => {
+            commit("setLabourContracts", data);
+            commit("setLabourContractsError", null);
+            // console.log(data)
+          })
+          .catch(function(error) {
+            if (error.response) {
+              commit("setLabourContracts", null);
+              commit("setLabourContractsError", error.response.data.message);
+            }
+          });
       } catch (error) {
-        alert("Cannot find database row for Labour Contract")
-
+        alert("Cannot find database row for Labour Contract");
       }
     },
-    async saveLabourContract({dispatch, commit, state}, labourcontract) {
+    async saveLabourContract({ dispatch, commit, state }, labourcontract) {
       // console.log(position)
-      return HTTP().patch(`/labourcontract/${labourcontract.id}`, {
-        // "id": 1,
-        // "user_id": 1,
-        // "employee_id": 1,
-        position_id: state.currentLabourContractPosition ? state.currentLabourContractPosition : labourcontract.position_id,
-        office_id: state.currentLabourContractOffice ? state.currentLabourContractOffice : labourcontract.office_id,
-        salary_id: state.currentLabourContractSalary ? state.currentLabourContractSalary : labourcontract.salary_id,
-        literacy_id: state.currentLabourContractLiteracy ? state.currentLabourContractLiteracy : labourcontract.literacy_id,
-        insurrance_employee_id: state.currentLabourContractInsurranceEmployeeID ? state.currentLabourContractInsurranceEmployeeID : labourcontract.insurrance_employee_id,
-      })
-        .then(async () => {
-          await dispatch('fetchLabourContracts')
-
-          commit('setCurrentLabourContractPosition', null);
-          commit('setCurrentLabourContractOffice', null);
-          commit('setCurrentLabourContractSalary', null);
-          commit('setCurrentLabourContractLiteracy', null);
-          commit('setCurrentLabourContractInsurranceEmployeeID', null);
+      return HTTP()
+        .patch(`/labourcontract/${labourcontract.id}`, {
+          position_id: state.currentLabourContractPosition
+            ? state.currentLabourContractPosition
+            : labourcontract.position_id,
+          office_id: state.currentLabourContractOffice
+            ? state.currentLabourContractOffice
+            : labourcontract.office_id,
+          salary_id: state.currentLabourContractSalary
+            ? state.currentLabourContractSalary
+            : labourcontract.salary_id,
+          literacy_id: state.currentLabourContractLiteracy
+            ? state.currentLabourContractLiteracy
+            : labourcontract.literacy_id,
+          insurrance_employee_id: state.currentLabourContractInsurranceEmployeeID
+            ? state.currentLabourContractInsurranceEmployeeID
+            : labourcontract.insurrance_employee_id
         })
-        .catch((err) => {
-          console.log(err)
-        });
-    },
-    async deleteLabourContract({commit}, labourcontract) {
+        .then(async () => {
+          await dispatch("fetchLabourContracts");
 
-      return HTTP().delete(`/labourcontract/${labourcontract.id}`)
-        .then((res) => {
-          // console.log(res)
-          res.data ? commit('removeLabourContract', labourcontract) : alert("Cannot delete because of a logical error!!")
+          commit("setCurrentLabourContractPosition", null);
+          commit("setCurrentLabourContractOffice", null);
+          commit("setCurrentLabourContractSalary", null);
+          commit("setCurrentLabourContractLiteracy", null);
+          commit("setCurrentLabourContractInsurranceEmployeeID", null);
+        })
+        .catch(err => {
+          console.log(err);
         });
     },
+    async deleteLabourContract({ commit }, labourcontract) {
+      return HTTP()
+        .delete(`/labourcontract/${labourcontract.id}`)
+        .then(res => {
+          // console.log(res)
+          res.data
+            ? commit("removeLabourContract", labourcontract)
+            : alert("Cannot delete because of a logical error!!");
+        });
+    }
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
     setCurrentLabourContractPosition(state, position) {
       state.currentLabourContractPosition = position;
@@ -102,11 +108,13 @@ export default {
 
     removeLabourContract(state, labourcontract) {
       try {
-        state.labourcontracts.results.splice(state.labourcontracts.results.findIndex(x => x === labourcontract), 1);
-        console.log("delele succeed")
-      }
-      catch(err) {
-        console.log(err)
+        state.labourcontracts.results.splice(
+          state.labourcontracts.results.findIndex(x => x === labourcontract),
+          1
+        );
+        console.log("delele succeed");
+      } catch (err) {
+        console.log(err);
       }
     },
 
@@ -115,11 +123,10 @@ export default {
     },
 
     setEditMode(state, labourcontract) {
-      Vue.set(labourcontract, 'isEditMode', true);
+      Vue.set(labourcontract, "isEditMode", true);
     },
     unsetEditMode(state, labourcontract) {
-      Vue.set(labourcontract, 'isEditMode', false);
-    },
-  },
+      Vue.set(labourcontract, "isEditMode", false);
+    }
+  }
 };
-

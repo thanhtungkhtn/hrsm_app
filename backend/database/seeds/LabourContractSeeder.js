@@ -24,7 +24,7 @@ class LabourContractSeeder {
         position_id: 1,
         office_id: 1,
         salary_id: 1,
-        literacy_id: 1,
+        literacy_id: 5,
         insurrance_employee_id: 1,
         NgayVaoLam: "2019-01-01 10:00:00",
         // MaHeSoLuong: "L10"
@@ -36,7 +36,7 @@ class LabourContractSeeder {
         position_id: 2,
         office_id: 2,
         salary_id: 2,
-        literacy_id: 1,
+        literacy_id: 5,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -46,7 +46,7 @@ class LabourContractSeeder {
         position_id: 3,
         office_id: 3,
         salary_id: 3,
-        literacy_id: 1,
+        literacy_id: 4,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -56,7 +56,7 @@ class LabourContractSeeder {
         position_id: 3,
         office_id: 4,
         salary_id: 3,
-        literacy_id: 1,
+        literacy_id: 3,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -66,7 +66,7 @@ class LabourContractSeeder {
         position_id: 3,
         office_id: 5,
         salary_id: 3,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -86,7 +86,7 @@ class LabourContractSeeder {
         position_id: 4,
         office_id: 3,
         salary_id: 4,
-        literacy_id: 1,
+        literacy_id: 4,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -96,7 +96,7 @@ class LabourContractSeeder {
         position_id: 4,
         office_id: 4,
         salary_id: 4,
-        literacy_id: 1,
+        literacy_id: 3,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -106,7 +106,7 @@ class LabourContractSeeder {
         position_id: 4,
         office_id: 5,
         salary_id: 4,
-        literacy_id: 1,
+        literacy_id: 3,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -116,7 +116,7 @@ class LabourContractSeeder {
         position_id: 4,
         office_id: 6,
         salary_id: 4,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -136,7 +136,7 @@ class LabourContractSeeder {
         position_id: 5,
         office_id: 3,
         salary_id: 5,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -146,7 +146,7 @@ class LabourContractSeeder {
         position_id: 5,
         office_id: 4,
         salary_id: 5,
-        literacy_id: 1,
+        literacy_id: 3,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -156,7 +156,7 @@ class LabourContractSeeder {
         position_id: 5,
         office_id: 4,
         salary_id: 5,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -166,7 +166,7 @@ class LabourContractSeeder {
         position_id: 5,
         office_id: 5,
         salary_id: 5,
-        literacy_id: 1,
+        literacy_id: 4,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -176,7 +176,7 @@ class LabourContractSeeder {
         position_id: 5,
         office_id: 5,
         salary_id: 5,
-        literacy_id: 1,
+        literacy_id: 3,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -186,7 +186,7 @@ class LabourContractSeeder {
         position_id: 5,
         office_id: 6,
         salary_id: 5,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -196,7 +196,7 @@ class LabourContractSeeder {
         position_id: 5,
         office_id: 6,
         salary_id: 5,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -206,7 +206,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 3,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -216,7 +216,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 3,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -226,7 +226,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 3,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -236,7 +236,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 3,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -246,7 +246,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 3,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -256,7 +256,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 4,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -266,7 +266,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 4,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -276,7 +276,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 4,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -286,7 +286,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 4,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -296,7 +296,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 4,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -306,7 +306,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 4,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -316,7 +316,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 5,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -326,7 +326,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 5,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -336,7 +336,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 5,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -346,7 +346,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 5,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -356,7 +356,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 6,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -366,7 +366,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 6,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -376,7 +376,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 6,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 3,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -396,7 +396,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 6,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {
@@ -406,7 +406,7 @@ class LabourContractSeeder {
         position_id: 6,
         office_id: 6,
         salary_id: 6,
-        literacy_id: 1,
+        literacy_id: 2,
         NgayVaoLam: "2019-01-01 10:00:00"
       },
       {

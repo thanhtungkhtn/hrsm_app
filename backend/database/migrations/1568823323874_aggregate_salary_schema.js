@@ -13,9 +13,9 @@ class AggregateSalarySchema extends Schema {
         .unsigned()
         .references("id")
         .inTable("employees")
-      table.integer('office_id', 5).unsigned().references('id').inTable('offices')
-      table.integer('hours')
-      table.integer('days_work')
+      // table.integer('office_id', 5).unsigned().references('id').inTable('offices')
+      // table.integer('hours')
+      table.integer('date_work')
       table.integer('months_work')
 
 

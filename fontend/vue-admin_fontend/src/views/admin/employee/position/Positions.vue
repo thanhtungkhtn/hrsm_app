@@ -157,6 +157,7 @@
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import usersData from '../../employee/UsersData'
 import createPosition from './CreatePosition'
+import router from '../../../../router'
 
 export default {
   name: 'Positions',

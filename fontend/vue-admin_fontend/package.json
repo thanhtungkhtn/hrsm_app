@@ -40,11 +40,11 @@
     "uws": "^100.0.1",
     "vue": "^2.6.10",
     "vue-chartjs": "^3.4.2",
+    "vue-functional-calendar": "^2.6.7",
     "vue-perfect-scrollbar": "^0.1.0",
     "vue-router": "^3.0.6",
     "vue-socket.io": "^3.0.7",
     "vue-validate": "^1.0.1",
-    "vue2-simple-calendar": "^1.0.8",
     "vuex": "^3.1.1",
     "vuex-persistedstate": "^2.5.4",
     "vuex-router-sync": "^5.0.0"

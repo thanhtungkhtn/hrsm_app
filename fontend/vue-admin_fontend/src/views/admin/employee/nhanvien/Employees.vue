@@ -1,8 +1,5 @@
 <template>
   <b-row>
-    <!-- <b-col cols="12" xl="12">
-
-    </b-col> -->
     <b-col cols="12" xl="12" v-if="employees">
 
       <CreateEmployee v-if="ishow" @show="ishow=false"
@@ -357,6 +354,7 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import CreateEmployee from './CreateEmployee'
+import router from '../../../../router'
 
 export default {
   name: 'Users',

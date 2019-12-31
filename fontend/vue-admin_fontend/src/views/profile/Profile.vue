@@ -140,6 +140,7 @@
 </template>
 
 <script>
+  // import Vue from 'vue'
   import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
   import UserCard from './UserCard'
   import router from '../../router'

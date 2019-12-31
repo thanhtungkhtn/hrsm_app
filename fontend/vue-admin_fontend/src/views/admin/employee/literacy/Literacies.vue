@@ -126,7 +126,7 @@
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 // import usersData from './UsersData'
 import createLiteracy from './CreateLiteracy'
-
+import router from '../../../../router'
 
 export default {
   name: 'Literacy',

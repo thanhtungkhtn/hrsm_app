@@ -1,44 +1,39 @@
 // import router from '../router';
-import Vue from 'vue';
+import Vue from "vue";
 // eslint-disable-next-line import/no-cycle
-import HTTP from '../../https';
+import HTTP from "../../https";
 
 export default {
   namespaced: true,
   state: {
     relatives: [],
 
-    errorRelation: null,
+    errorRelation: null
   },
   actions: {
     fetchRelatives({ commit }) {
-      return HTTP().get('/relatives')
+      return HTTP()
+        .get("/relatives")
         .then(({ data }) => {
-          commit('setRelatives', data);
-          commit('setRelativesError', null);
-          // console.log(data)
+          commit("setRelatives", data);
+          commit("setRelativesError", null);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           if (error.response) {
-            commit('setRelatives', null);
-            commit('setRelativesError', error.response.data.message);
-            // console.log(error.response.data.message);
-            // console.log(error.response.status);
-            // console.log(error.response.headers);
+            commit("setRelatives", null);
+            commit("setRelativesError", error.response.data.message);
           }
         });
     },
-    deleteRelative({commit}, relatives) {
-      // console.log(permission)
-      // commit('removePermission', permission);
-      return HTTP().delete(`/relatives/${relatives.id}`)
+    deleteRelative({ commit }, relatives) {
+      return HTTP()
+        .delete(`/relatives/${relatives.id}`)
         .then(() => {
-          commit('removeRelative', relatives);
+          commit("removeRelative", relatives);
         });
-    },
+    }
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
     setRelatives(state, relatives) {
       state.relatives = relatives;
@@ -49,10 +44,12 @@ export default {
 
     removeRelative(state, relative) {
       try {
-        state.relatives.results.splice(state.relatives.results.findIndex(x => x === relative), 1);
-      }
-      catch(err) {
-        console.log(err)
+        state.relatives.results.splice(
+          state.relatives.results.findIndex(x => x === relative),
+          1
+        );
+      } catch (err) {
+        console.log(err);
       }
     },
 
@@ -61,11 +58,10 @@ export default {
     },
 
     setEditMode(state, relative) {
-      Vue.set(relative, 'isEditMode', true);
+      Vue.set(relative, "isEditMode", true);
     },
     unsetEditMode(state, relative) {
-      Vue.set(relative, 'isEditMode', false);
-    },
-  },
+      Vue.set(relative, "isEditMode", false);
+    }
+  }
 };
-

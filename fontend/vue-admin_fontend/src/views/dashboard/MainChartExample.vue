@@ -20,7 +20,7 @@ export default {
     for (let i = 0; i <= elements; i++) {
       data1.push(random(50, 200))
       data2.push(random(80, 100))
-      data3.push(65)
+      data3.push(150)
     }
     this.renderChart({
       labels: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],

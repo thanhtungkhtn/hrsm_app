@@ -207,6 +207,7 @@
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 // import usersData from './UsersData'
 import createInsurrance from './CreateInsurrance'
+import router from '../../../../router'
 
 export default {
   name: 'Insurrance',

@@ -70,6 +70,13 @@ const Relations = () => import('@/views/admin/employee/relation/Relations')
 const RewardAndPunishments = () => import('@/views/admin/employee/khenthuong/RewardAndPunishments')
 const Allowances = () => import('@/views/admin/employee/phucap/Allowances')
 
+const TimeSheets = () => import('@/views/admin/employee/congluong/BangChamCongUser')
+const EffortTable = () => import('@/views/admin/employee/congluong/CongUser')
+const SalaryTable = () => import('@/views/admin/employee/congluong/BangLuongUser')
+
+
+const Help = () => import('@/views/pages/Help')
+// /hrme/help
 
 // const User = () => import('@/views/users/User')
 
@@ -91,6 +98,12 @@ const Relation = () => import('@/views/relation/Relation')
 
 // LabourContract
 const LabourContract = () => import('@/views/labour-contract/LabourContract')
+
+// Công
+const Cong = () => import('@/views/cong/Cong')
+
+// Lương
+const Luong = () => import('@/views/cong/Luong')
 
 Vue.use(Router)
 
@@ -159,6 +172,18 @@ let router = new Router({
               meta: { label: 'User Labour Contract'},
               name: 'Labour Contract',
               component: LabourContract
+            },
+            {
+              path: 'effort',
+              meta: { label: 'Daily worker'},
+              name: 'Daily worker',
+              component: Cong
+            },
+            {
+              path: 'psalary',
+              meta: { label: 'Individual incentive payment'},
+              name: 'Payment Salary',
+              component: Luong
             }
           ]
         },
@@ -244,6 +269,24 @@ let router = new Router({
               name: 'Allowances',
               component: Allowances,
             },
+            {
+              path: 'timesheets',
+              meta: { label: 'Timesheets'},
+              name: 'Timesheets',
+              component: TimeSheets,
+            },
+            {
+              path: 'eftable',
+              meta: { label: 'Effort Table'},
+              name: 'Effort Table',
+              component: EffortTable,
+            },
+            {
+              path: 'saltable',
+              meta: { label: 'Salary Table'},
+              name: 'Salary Table Employee',
+              component: SalaryTable,
+            },
             // {
             //   path: ':id',
             //   meta: { label: 'User Details'},
@@ -252,6 +295,12 @@ let router = new Router({
             // },
 
           ]
+        },
+        {
+          path: 'help',
+          meta: { label: 'Help User'},
+          name: 'More Information Application',
+          component: Help,
         },
       ]
     },

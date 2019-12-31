@@ -86,13 +86,13 @@ export default {
       },
       children: [
         {
-          name: 'Chấm Công',
-          url: '',
+          name: 'Dữ liệu chấm công',
+          url: '/hrme/timesheets',
           icon: 'icon-puzzle'
         },
         {
-          name: 'Xóa dữ liệu công',
-          url: '',
+          name: 'Dữ liệu bảng công',
+          url: '/hrme/eftable',
           icon: 'icon-puzzle'
         },
       ]
@@ -109,54 +109,62 @@ export default {
       },
       children: [
         {
-          name: 'Lương',
-          url: '',
+          name: 'Dữ liệu bảng lương',
+          url: '/hrme/saltable',
           icon: 'fa fa-money'
-        },
-        {
-          name: 'Tính Lương',
-          url: '',
-          icon: 'icon-puzzle'
-        },
-        {
-          name: 'Bảng lương',
-          url: '',
-          icon: 'icon-puzzle'
         },
       ]
     },
     {
-      title: false,
-      name: 'Báo Cáo - Thống Kê',
-      class: '',
-      url:'/users',
-      icon: 'icon-graph',
-      wrapper: {
-        element: '',
-        attributes: {}
-      },
-      children: [
-        {
-          name: 'Lương',
-          url: '',
-          icon: 'icon-puzzle'
-        },
-        {
-          name: 'Công',
-          url: '',
-          icon: 'icon-puzzle'
-        },
-        {
-          name: 'Lịch sử làm',
-          url: '',
-          icon: 'icon-puzzle'
-        },
-        {
-          name: 'Trong ngày',
-          url: '',
-          icon: 'icon-puzzle'
-        },
-      ]
+      // title: false,
+      // name: 'Hướng dẫn sử dụng',
+      // class: '',
+      // url:'/users',
+      // icon: 'icon-wallet',
+      // wrapper: {
+      //   element: '',
+      //   attributes: {}
+      // },
+      // children: [
+      //   {
+          name: 'Trợ giúp',
+          url: '/help',
+          icon: 'fa fa-user-md'
+        // },
+      // ]
     },
+    // {
+    //   title: false,
+    //   name: 'Báo Cáo - Thống Kê',
+    //   class: '',
+    //   url:'/users',
+    //   icon: 'icon-graph',
+    //   wrapper: {
+    //     element: '',
+    //     attributes: {}
+    //   },
+    //   children: [
+    //     {
+    //       name: 'Lương',
+    //       url: '',
+    //       icon: 'icon-puzzle'
+    //     },
+    //     {
+    //       name: 'Công',
+    //       url: '',
+    //       icon: 'icon-puzzle'
+    //     },
+    //     {
+    //       name: 'Lịch sử làm',
+    //       url: '',
+    //       icon: 'icon-puzzle'
+    //     },
+    //     {
+    //       name: 'Trong ngày',
+    //       url: '',
+    //       icon: 'icon-puzzle'
+    //     },
+    //   ]
+    // },
   ]
 }

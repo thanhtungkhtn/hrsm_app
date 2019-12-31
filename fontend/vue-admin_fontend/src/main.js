@@ -12,11 +12,16 @@ import router from './router'
 import axios from 'axios'
 import store from './store/index'
 import { sync } from 'vuex-router-sync'
-import vueCalendar from "vue2-simple-calendar";
+// import vueCalendar from "vue2-simple-calendar";
+import FunctionalCalendar from 'vue-functional-calendar';
+
 
 Vue.use(BootstrapVue)
-Vue.use(vueCalendar, {
-  // configuration goes here.
+// Vue.use(vueCalendar, {
+//   // configuration goes here.
+// });
+Vue.use(FunctionalCalendar, {
+  dayNames: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
 });
 
 Vue.config.productionTip = false

@@ -243,6 +243,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import router from '../../../../router'
 // import usersData from './UsersData'
 export default {
   name: 'LabourContracts',

@@ -266,9 +266,11 @@
     </div>
     <div class="col-md-4">
       <div>
-        <b-card img-src="img/avatars/avatar.jpg" img-alt="avatar" overlay></b-card>
+        <!-- {{labourcontract.results.employee.avatar }}
+        {{labourcontract.results.employee.fingerprint_image}} -->
+        <b-card v-bind:img-src=labourcontract.results.employee.avatar img-alt="avatar" overlay></b-card>
 
-        <b-card img-src="img/vantay/vantay.jpg" img-alt="fingerprint_image" overlay></b-card>
+        <!-- <b-card img-src="img/vantay/hinhvantay.png" img-alt="fingerprint_image" overlay></b-card> -->
       </div>
     </div>
     <!-- <div class="col-md-4">
@@ -279,6 +281,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import router from '../../router'
 
 export default {
   name: 'tabs',

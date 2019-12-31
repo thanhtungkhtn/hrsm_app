@@ -125,6 +125,7 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import CreatePermission from './CreatePermission'
+import router from '../../../../router'
 
 export default {
   name: 'permissions',

@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -11,11 +11,11 @@
 */
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
-const Factory = use('Factory')
-const Employee = use('App/Models/Employee')
+const Factory = use("Factory");
+const Employee = use("App/Models/Employee");
 
 class EmployeeSeeder {
-  async run () {
+  async run() {
     await Employee.createMany([
       {
         // MaNhanVien: "NV001",
@@ -26,7 +26,7 @@ class EmployeeSeeder {
         permision_id: 1,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
 
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -36,15 +36,15 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV002",
         user_id: 2,
         permision_id: 1,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Phạm Thanh Toản",
         gender: "MALE",
 
         day_of_birth: "1998-08-11",
@@ -55,8 +55,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV003",
@@ -66,8 +66,8 @@ class EmployeeSeeder {
         user_id: 3,
         permision_id: 2,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        name: "Phạm Thanh Thúy",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -76,8 +76,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV004",
@@ -87,8 +87,8 @@ class EmployeeSeeder {
         user_id: 4,
         permision_id: 2,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        name: "Phạm Thanh Tan",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -97,8 +97,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV005",
@@ -108,7 +108,7 @@ class EmployeeSeeder {
         user_id: 5,
         permision_id: 2,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Phạm Thanh Anh",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -118,8 +118,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV006",
@@ -129,7 +129,7 @@ class EmployeeSeeder {
         user_id: 6,
         permision_id: 2,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Phạm Thanh Công",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -139,8 +139,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV007",
@@ -150,8 +150,8 @@ class EmployeeSeeder {
         user_id: 7,
         permision_id: 3,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        name: "Phạm Thanh Thái",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -160,8 +160,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV008",
@@ -171,7 +171,7 @@ class EmployeeSeeder {
         user_id: 8,
         permision_id: 3,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Phạm Thanh Tĩnh",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -181,8 +181,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV009",
@@ -192,7 +192,7 @@ class EmployeeSeeder {
         user_id: 9,
         permision_id: 3,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Qoách Tĩnh",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -202,8 +202,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV010",
@@ -213,7 +213,7 @@ class EmployeeSeeder {
         user_id: 10,
         permision_id: 3,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Hoàng Dung",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -224,8 +224,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV011",
@@ -233,10 +233,10 @@ class EmployeeSeeder {
         // MaHD: "HD011",
         // MaHeSoLuong: "L06",
         user_id: 11,
-        permision_id: 5,
+        permision_id: 4,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        name: "Dương Quá",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -246,8 +246,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV012",
@@ -255,10 +255,10 @@ class EmployeeSeeder {
         // MaHD: "HD012",
         // MaHeSoLuong: "L06",
         user_id: 12,
-        permision_id: 5,
+        permision_id: 4,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        name: "Tiểu Long Nữ",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -268,8 +268,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV013",
@@ -277,10 +277,10 @@ class EmployeeSeeder {
         // MaHD: "HD013",
         // MaHeSoLuong: "L06",
         user_id: 13,
-        permision_id: 5,
+        permision_id: 4,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        name: "Quan Vân Trường",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -290,8 +290,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV014",
@@ -299,9 +299,9 @@ class EmployeeSeeder {
         // MaHD: "HD014",
         // MaHeSoLuong: "L06",
         user_id: 14,
-        permision_id: 5,
+        permision_id: 4,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Lưu Bị",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -312,8 +312,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV015",
@@ -323,7 +323,7 @@ class EmployeeSeeder {
         user_id: 15,
         permision_id: 5,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Tào Tháo",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -334,8 +334,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV016",
@@ -345,8 +345,8 @@ class EmployeeSeeder {
         user_id: 16,
         permision_id: 5,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        name: "Tôn Quyền",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -356,8 +356,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV017",
@@ -367,7 +367,7 @@ class EmployeeSeeder {
         user_id: 17,
         permision_id: 5,
         licensed: 1,
-        name: "Phạm Thanh Tùng",
+        name: "Công Tôn Sách",
         gender: "MALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
@@ -378,8 +378,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV018",
@@ -387,6 +387,72 @@ class EmployeeSeeder {
         // MaHD: "HD018",
         // MaHeSoLuong: "L06",
         user_id: 18,
+        permision_id: 5,
+        licensed: 1,
+        name: "Chu Du",
+        gender: "FEMALE",
+        day_of_birth: "1998-08-11",
+        identity_card_number: "8888888888",
+        phone_number: "0123456789",
+
+        address: "Hồ Chí Minh",
+        native_place: "Hà Nội",
+        nationality: "Kinh",
+        email: "@gmail.com",
+        marital_status: "Độc Thân",
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
+      },
+      {
+        // MaNhanVien: "NV019",
+        // MaPB: "PB05",
+        // MaHD: "HD019",
+        // MaHeSoLuong: "L06",
+        user_id: 19,
+        permision_id: 5,
+        licensed: 1,
+        name: "Triệu Vân",
+        gender: "MALE",
+        day_of_birth: "1998-08-11",
+        identity_card_number: "8888888888",
+        phone_number: "0123456789",
+
+        address: "Hồ Chí Minh",
+        native_place: "Hà Nội",
+        nationality: "Kinh",
+        email: "@gmail.com",
+        marital_status: "Độc Thân",
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
+      },
+      {
+        // MaNhanVien: "NV020",
+        // MaPB: "PB05",
+        // MaHD: "HD020",
+        // MaHeSoLuong: "L06",
+        user_id: 20,
+        permision_id: 5,
+        licensed: 1,
+        name: "Gia Các Lượng",
+        gender: "MALE",
+        day_of_birth: "1998-08-11",
+        identity_card_number: "8888888888",
+        phone_number: "0123456789",
+
+        address: "Hồ Chí Minh",
+        native_place: "Hà Nội",
+        nationality: "Kinh",
+        email: "@gmail.com",
+        marital_status: "Độc Thân",
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
+      },
+      {
+        // MaNhanVien: "NV021",
+        // MaPB: "PB05",
+        // MaHD: "HD020",
+        // MaHeSoLuong: "L06",
+        user_id: 21,
         permision_id: 5,
         licensed: 1,
         name: "Phạm Thanh Tùng",
@@ -400,74 +466,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
-      },
-      {
-        // MaNhanVien: "NV019",
-        // MaPB: "PB05",
-        // MaHD: "HD019",
-        // MaHeSoLuong: "L06",
-        user_id: 19,
-        permision_id: 6,
-        licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
-        day_of_birth: "1998-08-11",
-        identity_card_number: "8888888888",
-        phone_number: "0123456789",
-
-        address: "Hồ Chí Minh",
-        native_place: "Hà Nội",
-        nationality: "Kinh",
-        email: "@gmail.com",
-        marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
-      },
-      {
-        // MaNhanVien: "NV020",
-        // MaPB: "PB05",
-        // MaHD: "HD020",
-        // MaHeSoLuong: "L06",
-        user_id: 20,
-        permision_id: 6,
-        licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
-        day_of_birth: "1998-08-11",
-        identity_card_number: "8888888888",
-        phone_number: "0123456789",
-
-        address: "Hồ Chí Minh",
-        native_place: "Hà Nội",
-        nationality: "Kinh",
-        email: "@gmail.com",
-        marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
-      },
-      {
-        // MaNhanVien: "NV021",
-        // MaPB: "PB05",
-        // MaHD: "HD020",
-        // MaHeSoLuong: "L06",
-        user_id: 21,
-        permision_id: 6,
-        licensed: 1,
-        name: "Phạm Thanh Tùng",
-        gender: "MALE",
-        day_of_birth: "1998-08-11",
-        identity_card_number: "8888888888",
-        phone_number: "0123456789",
-
-        address: "Hồ Chí Minh",
-        native_place: "Hà Nội",
-        nationality: "Kinh",
-        email: "@gmail.com",
-        marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV022",
@@ -475,7 +475,7 @@ class EmployeeSeeder {
         // MaHD: "HD020",
         // MaHeSoLuong: "L06",
         user_id: 22,
-        permision_id: 6,
+        permision_id: 5,
         licensed: 1,
         name: "Phạm Thanh Tùng",
         gender: "MALE",
@@ -488,8 +488,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV023",
@@ -510,8 +510,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV024",
@@ -522,7 +522,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -532,8 +532,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV025",
@@ -555,8 +555,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV026",
@@ -577,8 +577,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV027",
@@ -589,7 +589,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -599,8 +599,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV028",
@@ -621,8 +621,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV029",
@@ -633,7 +633,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -643,8 +643,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV030",
@@ -665,8 +665,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV031",
@@ -687,8 +687,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV032",
@@ -699,7 +699,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -709,8 +709,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV033",
@@ -731,8 +731,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV034",
@@ -743,7 +743,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -753,8 +753,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV035",
@@ -775,8 +775,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV036",
@@ -797,8 +797,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV037",
@@ -809,7 +809,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -819,8 +819,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV038",
@@ -841,8 +841,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV039",
@@ -853,7 +853,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -863,8 +863,8 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       },
       {
         // MaNhanVien: "NV040",
@@ -875,7 +875,7 @@ class EmployeeSeeder {
         permision_id: 6,
         licensed: 1,
         name: "Phạm Thanh Tùng",
-        gender: "MALE",
+        gender: "FEMALE",
         day_of_birth: "1998-08-11",
         identity_card_number: "8888888888",
         phone_number: "0123456789",
@@ -885,11 +885,11 @@ class EmployeeSeeder {
         nationality: "Kinh",
         email: "@gmail.com",
         marital_status: "Độc Thân",
-        avatar: "img/hinhnhanvien.png",
-        fingerprint_image: "img/hinhvantay.png"
+        avatar: "img/avatars/hinhnhanvien.jpg",
+        fingerprint_image: "vantay/hinhvantay.png"
       }
-    ])
+    ]);
   }
 }
 
-module.exports = EmployeeSeeder
+module.exports = EmployeeSeeder;

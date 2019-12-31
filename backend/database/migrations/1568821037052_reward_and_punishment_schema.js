@@ -18,7 +18,6 @@ class RewardAndPunishmentSchema extends Schema {
         .defaultsTo("UNKWON");
       table.integer("money").unsigned()
       table.string("reason", 255)
-      table.datetime("date")
 
       table.timestamps(true, true)
     })
