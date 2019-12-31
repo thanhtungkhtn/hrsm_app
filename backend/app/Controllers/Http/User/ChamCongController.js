@@ -20,8 +20,6 @@ const MakeSalary = use("App/Models/MakeSalary");
 const AggregateSalary = use("App/Models/AggregateSalary");
 const ExportSalary = use("App/Models/ExportSalary");
 
-const py = use("App/Controllers/Http/Admin/Python/PythonController");
-
 const Hash = use("Hash");
 const Ws = use("Ws");
 const multer = use("multer");
@@ -454,32 +452,19 @@ class ChamCongController {
       const user = auth.current.user;
       const results = await user.employee().fetch();
 
-      this.compareout(
-        { auth, request, response, view },
-        fileName,
-        results.avatar
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async compareout({ auth, request, response, view }, pathImage1, pathImage2) {
-    try {
       function runScript() {
         return spawn("python", [
           "-u",
           path.join(__dirname, "../../../../pythonside/Compare.py"),
-          pathImage1,
-          pathImage2
+          fileName,
+          results.avatar
         ]);
       }
       const subprocess = runScript();
 
       // print output of script
       subprocess.stdout.on("data", data => {
-        //  console.log(`data:${data}`); // su ly o trong day luon
-        if (data == 1) {
+        if (data == 0) {
           console.log("the same image");
           this.checkOut({ auth, response });
         }

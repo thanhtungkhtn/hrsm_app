@@ -54,10 +54,13 @@ export default {
         });
       commit("setMessage", null);
     },
-    async checkOutByImage({ commit }, formDataOut) {
+    async checkOutByImage({ dispatch, commit }, formDataOut) {
       await HTTP()
         .post("/account/uploadout", formDataOut)
         .then(() => {
+          setTimeout(async () => {
+            await dispatch("fetchCong");
+          }, 3000);
           commit("setMessage", "uploaded");
         });
     }
