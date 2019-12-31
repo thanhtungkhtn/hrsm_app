@@ -38,6 +38,7 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import CreateKhenThuong from './CreateKhenThuong'
+import router from '../../../../router'
 
 export default {
   name: 'RewardAndPunishments',

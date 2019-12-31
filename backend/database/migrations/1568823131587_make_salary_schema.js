@@ -12,12 +12,13 @@ class MakeSalarySchema extends Schema {
         .unsigned()
         .references("id")
         .inTable("employees")
-      table.datetime('date').notNullable()
-      table.datetime('check_in').notNullable()
-      table.datetime('check_out').notNullable()
-      table
-        .enum("status", ["CHECKIN", "CHECKOUT", "UNKWON"])
-        .defaultsTo("UNKWON");
+      table.date('date').notNullable()
+      table.time('check_in')
+      table.time('check_out')
+      table.float('date_work')
+      // table
+      //   .enum("status", ["CHECKIN", "CHECKOUT", "UNKWON"])
+      //   .defaultsTo("UNKWON");
       table.timestamps(true, true)
     })
   }

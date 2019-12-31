@@ -1,36 +1,32 @@
 // import router from '../router';
-import Vue from 'vue';
+import Vue from "vue";
 // eslint-disable-next-line import/no-cycle
-import HTTP from '../../https';
+import HTTP from "../../https";
 
 export default {
   namespaced: true,
   state: {
     rewardandpunishments: [],
 
-    errorRewardAndPunishments: null,
+    errorRewardAndPunishments: null
   },
   actions: {
     fetchRewardAndPunishments({ commit }) {
-      return HTTP().get('/raps')
+      return HTTP()
+        .get("/raps")
         .then(({ data }) => {
-          commit('setRewardAndPunishments', data);
-          commit('setRewardAndPunishmentsError', null);
-          // console.log(data)
+          commit("setRewardAndPunishments", data);
+          commit("setRewardAndPunishmentsError", null);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           if (error.response) {
-            commit('setRewardAndPunishments', null);
-            commit('setRewardAndPunishmentsError', error.response.data.message);
-            // console.log(error.response.data.message);
-            // console.log(error.response.status);
-            // console.log(error.response.headers);
+            commit("setRewardAndPunishments", null);
+            commit("setRewardAndPunishmentsError", error.response.data.message);
           }
         });
-    },
+    }
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
     setRewardAndPunishments(state, rewardandpunishments) {
       state.rewardandpunishments = rewardandpunishments;
@@ -39,15 +35,14 @@ export default {
       state.rewardandpunishments.push(rewardandpunishment);
     },
     setEditMode(state, rewardandpunishment) {
-      Vue.set(rewardandpunishment, 'isEditMode', true);
+      Vue.set(rewardandpunishment, "isEditMode", true);
     },
     unsetEditMode(state, rewardandpunishment) {
-      Vue.set(rewardandpunishment, 'isEditMode', false);
+      Vue.set(rewardandpunishment, "isEditMode", false);
     },
 
     setRewardAndPunishmentsError(state, e) {
       state.errorRewardAndPunishments = e;
-    },
-  },
+    }
+  }
 };
-

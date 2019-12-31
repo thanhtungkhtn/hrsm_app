@@ -17,8 +17,8 @@ class Employee extends Model {
   dayOff() {
     return this.hasMany('App/Models/DayOff');
   }
-  dotimeSheet() {
-    return this.hasOne('App/Models/DoTimesheet');
+  makeSalary() {
+    return this.hasMany('App/Models/MakeSalary');
   }
   insurranceEmployee() {
     return this.hasOne('App/Models/InsurranceEmployee');
@@ -44,10 +44,10 @@ class Employee extends Model {
   reward_and_punishment() {
     return this.hasMany('App/Models/RewardAndPunishment');
   }
-  tableTimeSalary() {
-    return this.hasMany('App/Models/TableTimeSalary');
+  exportsalary() {
+    return this.hasMany('App/Models/ExportSalary');
   }
-  timesheet() {
+  aggregateSalary() {
     return this.hasMany('App/Models/Timesheet');
   }
 }

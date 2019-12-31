@@ -4,19 +4,19 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips'
 
 export default {
   extends: Line,
-  props: ['height', 'width'],
+  props: ['height', 'width', 'data3' ],
   mounted () {
     const datasets3 = [
       {
-        label: 'My First dataset',
+        label: 'Number of employees at this level',
         backgroundColor: 'rgba(255,255,255,.2)',
         borderColor: 'rgba(255,255,255,.55)',
-        data: [78, 81, 80, 45, 34, 12, 40]
+        data: this.data3 //[78, 81, 80, 45, 34, 12, 40]
       }
     ]
     this.renderChart(
       {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Cao Đẳng', 'Đại Học', 'Trung Cấp', 'Thạc Sĩ', 'Tiến Sĩ'],
         datasets: datasets3
       },
       {
@@ -26,14 +26,14 @@ export default {
         },
         maintainAspectRatio: false,
         legend: {
-          display: false
+          display: true
         },
         scales: {
           xAxes: [{
-            display: false
+            display: true
           }],
           yAxes: [{
-            display: false
+            display: true
           }]
         },
         elements: {

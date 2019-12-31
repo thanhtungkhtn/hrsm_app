@@ -116,6 +116,7 @@
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 import usersData from '../../employee/UsersData'
 import createForm from './CreateOffice'
+import router from '../../../../router'
 
 export default {
   name: 'Offices',

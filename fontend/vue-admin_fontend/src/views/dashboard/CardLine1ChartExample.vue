@@ -2,24 +2,31 @@
 import { Line } from 'vue-chartjs'
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips'
 import { getStyle } from '@coreui/coreui/dist/js/coreui-utilities'
-
 export default {
   extends: Line,
-  props: ['height', 'width'],
+  props: ['height', 'width', 'data1', 'listLabel1'],
   mounted () {
-    const brandPrimary = getStyle('--primary') || '#20a8d8'
+
+    const brandPrimary = getStyle('--info') || '#20a8d8'
     const datasets1 = [
       {
-        label: 'My First dataset',
+        label: 'Total number of employees',
         backgroundColor: brandPrimary,
         borderColor: 'rgba(255,255,255,.55)',
-        data: [65, 59, 84, 84, 51, 55, 40]
+        data: this.data1
       }
     ]
 
     this.renderChart(
       {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: [
+          'Phòng Nhân Sự',
+          'Phòng Kế Toán',
+          'Phòng Kinh Doanh',
+          'Phòng Kĩ Thuật',
+          'Phòng Giám Đốc',
+          'Phòng Phó Giám Đốc'
+          ],
         datasets: datasets1
       },
       {
@@ -29,7 +36,7 @@ export default {
         },
         maintainAspectRatio: false,
         legend: {
-          display: false
+          display: true
         },
         scales: {
           xAxes: [
@@ -46,9 +53,9 @@ export default {
           ],
           yAxes: [
             {
-              display: false,
+              display: true,
               ticks: {
-                display: false,
+                display: true,
                 min: Math.min.apply(Math, datasets1[0].data) - 5,
                 max: Math.max.apply(Math, datasets1[0].data) + 5
               }

@@ -1,8 +1,11 @@
-'use strict'
+"use strict";
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
+
+/** @type {import('moment')} */
+const moment = use("moment");
 
 /** @type {import('@adonisjs/lucid/src/Database')} */
 const Database = use("Database");
@@ -13,24 +16,28 @@ const { Editor, Field } = use("datatables.net-editor-server");
 /** @type {import('../../../../../providers/src/DataTables/DataTables')} */
 // const DataTables = use("DataTables");
 
-const Employee = use('App/Models/Employee')
-const User = use('App/Models/User')
-const PermisionDetail = use('App/Models/PermisionDetail')
-const LabourContract = use('App/Models/LabourContract')
+const Employee = use("App/Models/Employee");
+const User = use("App/Models/User");
+const PermisionDetail = use("App/Models/PermisionDetail");
+const LabourContract = use("App/Models/LabourContract");
 
-const AuthorizationService = use('App/Services/AuthorizationService')
+const AuthorizationService = use("App/Services/AuthorizationService");
 
 /**
  * Resourceful controller for interacting with hopdongs
  */
 class HopDongController {
+  get getDate() {
+    return moment().format("YYYY-MM-DD");
+  }
 
-  async checkActionPermission(permision_id, action_code) { // kiểm tra quyền thực hiện
+  async checkActionPermission(permision_id, action_code) {
+    // kiểm tra quyền thực hiện
 
-    let result =  await PermisionDetail.query()
+    let result = await PermisionDetail.query()
       .where({ permision_id: permision_id, action_code: action_code })
-      .select('check_action')
-      .firstOrFail()
+      .select("check_action")
+      .firstOrFail();
 
     return result.toJSON().check_action;
   }
@@ -44,34 +51,37 @@ class HopDongController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ auth, request, response, view }) {
-    const user = auth.current.user
-    const user_employee = await user.employee().select('licensed', 'permision_id').fetch() // xác thực quyền
+  async index({ auth, request, response, view }) {
+    const user = auth.current.user;
+    const user_employee = await user
+      .employee()
+      .select("licensed", "permision_id")
+      .fetch(); // xác thực quyền
 
     const labour_contracts = await LabourContract.query()
-      .with('user')
-      .with('employee')
-      .with('position')
-      .with('office')
-      .with('salary')
-      .with('literacy')
-      .with('insurrance_employee', insurrance_employee => {
-        insurrance_employee.with('insurrance')
+      .with("user")
+      .with("employee")
+      .with("position")
+      .with("office")
+      .with("salary")
+      .with("literacy")
+      .with("insurrance_employee", insurrance_employee => {
+        insurrance_employee.with("insurrance");
       })
-      .fetch()
+      .fetch();
 
     // const users = user.getRelated('labour_contracts')
 
     AuthorizationService.verifyPermission(
       labour_contracts,
       user_employee.licensed,
-      await this.checkActionPermission(user_employee.permision_id, 'VIEW')
+      await this.checkActionPermission(user_employee.permision_id, "VIEW")
     );
 
     return response.json({
-        user: user,
-        results: labour_contracts
-    })
+      user: user,
+      results: labour_contracts
+    });
   }
 
   /**
@@ -83,8 +93,7 @@ class HopDongController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async create ({ request, response, view }) {
-  }
+  async create({ request, response, view }) {}
 
   /**
    * Create/save a new hopdong.
@@ -94,33 +103,36 @@ class HopDongController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ auth, request, response }) {
-    const user = auth.current.user
+  async store({ auth, request, response }) {
+    const user = auth.current.user;
     // const auth_user_admin = await auth.getUser()
-    const user_employee = await user.employee().select('licensed', 'permision_id').fetch() // xác thực quyền
+    const user_employee = await user
+      .employee()
+      .select("licensed", "permision_id")
+      .fetch(); // xác thực quyền
 
     AuthorizationService.verifyPermission(
       user,
       user_employee.licensed,
-      await this.checkActionPermission(user_employee.permision_id, 'CREATE')
-    )
+      await this.checkActionPermission(user_employee.permision_id, "CREATE")
+    );
 
     const new_labour_contract = await LabourContract.create({
-        user_id: request.input('user_id'),
-        employee_id: request.input('employee_id'),
-        position_id: request.input('position_id'),
-        office_id: request.input('office_id'),
-        salary_id: request.input('salary_id'),
-        literacy_id: request.input('literacy_id'),
-        insurrance_employee_id: request.input('insurrance_employee_id'),
-        NgayVaoLam: request.input('NgayVaoLam'),
-    })
+      user_id: request.input("user_id"),
+      employee_id: request.input("employee_id"),
+      position_id: request.input("position_id"),
+      office_id: request.input("office_id"),
+      salary_id: request.input("salary_id"),
+      literacy_id: request.input("literacy_id"),
+      insurrance_employee_id: request.input("insurrance_employee_id"),
+      NgayVaoLam: request.input("NgayVaoLam")
+    });
 
     return response.json({
-        status: 'success',
-        message: 'labour_contract created!',
-        data: new_labour_contract
-    })
+      status: "success",
+      message: "labour_contract created!"
+      // data: new_labour_contract
+    });
   }
 
   /**
@@ -132,8 +144,7 @@ class HopDongController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
-  }
+  async show({ params, request, response, view }) {}
 
   /**
    * Render a form to update an existing hopdong.
@@ -144,8 +155,7 @@ class HopDongController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async edit ({ params, request, response, view }) {
-  }
+  async edit({ params, request, response, view }) {}
 
   /**
    * Update hopdong details.
@@ -155,36 +165,41 @@ class HopDongController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ({ auth, params, request, response }) {
+  async update({ auth, params, request, response }) {
     // const auth_user_admin = await auth.getUser()
-    const user = auth.current.user
-    const user_employee = await user.employee().select('licensed', 'permision_id').fetch() // xác thực quyền
+    const user = auth.current.user;
+    const user_employee = await user
+      .employee()
+      .select("licensed", "permision_id")
+      .fetch(); // xác thực quyền
 
     let labour_contract_update = await LabourContract.find(params.id);
 
     AuthorizationService.verifyPermission(
       labour_contract_update,
       user_employee.licensed,
-      await this.checkActionPermission(user_employee.permision_id, 'EDIT')
-    )
+      await this.checkActionPermission(user_employee.permision_id, "EDIT")
+    );
 
-    labour_contract_update.merge(request.only([
-      'user_id',
-      'employee_id',
-      'position_id',
-      'office_id',
-      'salary_id',
-      'literacy_id',
-      'insurrance_employee_id',
-      'NgayVaoLam'
-    ]));
-    await labour_contract_update.save()
+    labour_contract_update.merge(
+      request.only([
+        "user_id",
+        "employee_id",
+        "position_id",
+        "office_id",
+        "salary_id",
+        "literacy_id",
+        "insurrance_employee_id",
+        "NgayVaoLam"
+      ])
+    );
+    await labour_contract_update.save();
 
     return response.json({
-        status: 'success',
-        message: 'labour_contract created!',
-        data: labour_contract_update
-    })
+      status: "success",
+      message: "labour_contract created!",
+      data: labour_contract_update
+    });
   }
 
   /**
@@ -195,18 +210,21 @@ class HopDongController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ auth, params, request, response }) {
+  async destroy({ auth, params, request, response }) {
     try {
-      const user = auth.current.user
-      const user_employee = await user.employee().select('licensed', 'permision_id').fetch() // xác thực quyền
+      const user = auth.current.user;
+      const user_employee = await user
+        .employee()
+        .select("licensed", "permision_id")
+        .fetch(); // xác thực quyền
 
       let labour_contract_destroy = await LabourContract.find(params.id);
 
       AuthorizationService.verifyPermission(
         labour_contract_destroy,
         user_employee.licensed,
-        await this.checkActionPermission(user_employee.permision_id, 'DELETE')
-      )
+        await this.checkActionPermission(user_employee.permision_id, "DELETE")
+      );
 
       await labour_contract_destroy.delete();
 
@@ -217,4 +235,4 @@ class HopDongController {
   }
 }
 
-module.exports = HopDongController
+module.exports = HopDongController;

@@ -12,9 +12,16 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
+const PositionAllowance = use('App/Models/PositionAllowance')
 
 class PositionAllowanceSeeder {
-  async run () {
+  async run() {
+    await PositionAllowance.createMany([
+      {
+        employee_id: 1,
+        money: "2000",
+      },
+    ])
   }
 }
 

@@ -5,21 +5,28 @@ import { getStyle } from '@coreui/coreui/dist/js/coreui-utilities'
 
 export default {
   extends: Line,
-  props: ['height', 'width'],
+  props: ['height', 'width', 'data2'],
   mounted () {
-    const brandInfo = getStyle('--light-blue') || '#63c2de'
+    const brandInfo = getStyle('--light-green') || '#99CC33'
     const datasets2 = [
       {
-        label: 'My First dataset',
+        label: 'Number of employees at this position',
         backgroundColor: brandInfo,
         borderColor: 'rgba(255,255,255,.55)',
-        data: [1, 18, 9, 17, 34, 22, 11]
+        data:  this.data2 //[5, 5, 5, 5, 5, 5, 5]
       }
     ]
 
     this.renderChart(
       {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: [
+          'Nhân Viên',
+          'Tổ Trưởng',
+          'Phó Phòng',
+          'Trưởng Phòng',
+          'Giám Đốc',
+          'Phó Giám Đốc'
+          ],
         datasets: datasets2
       },
       {
@@ -29,11 +36,12 @@ export default {
         },
         maintainAspectRatio: false,
         legend: {
-          display: false
+          display: true
         },
         scales: {
           xAxes: [
             {
+              display: true,
               gridLines: {
                 color: 'transparent',
                 zeroLineColor: 'transparent'
@@ -46,9 +54,9 @@ export default {
           ],
           yAxes: [
             {
-              display: false,
+              display: true,
               ticks: {
-                display: false,
+                display: true,
                 min: Math.min.apply(Math, datasets2[0].data) - 5,
                 max: Math.max.apply(Math, datasets2[0].data) + 5
               }

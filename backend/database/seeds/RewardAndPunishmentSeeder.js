@@ -18,20 +18,16 @@ class RewardAndPunishmentSeeder {
   async run () {
     await RewardAndPunishment.createMany([
       {
-        MaTP: "TP01",
-        MaNhanVien: "NV007",
-        Loai: "REWARD",
-        Tien: "1000000",
-        LyDo: "abc",
-        Ngay: "2019-09-18"
+        employee_id: 1,
+        type: "REWARD",
+        money: "2000",
+        reason: "abc",
       },
       {
-        MaTP: "TP02",
-        MaNhanVien: "NV0017",
-        Loai: "PUNISHMENT",
-        Tien: "1000000",
-        LyDo: "abc",
-        Ngay: "2019-09-18"
+        employee_id: 1,
+        type: "PUNISHMENT",
+        money: "1000",
+        reason: "abc",
       }
     ])
   }

@@ -1,10 +1,11 @@
 <template>
   <AppHeaderDropdown right no-caret>
     <template slot="header">
-      <img
-        src="img/avatars/avatar.jpg"
+      <!-- <img
+        v-bind:src="this.$avatar"
         class="img-avatar"
-        alt="admin@admin.com" />
+        alt="admin@admin.com" /> -->
+        <i class="fa fa-user-circle-o fa-lg"/>
     </template>\
     <template slot="dropdown">
       <b-dropdown-header tag="div" class="text-center"><strong>Account</strong></b-dropdown-header>
@@ -25,10 +26,10 @@
       <b-dropdown-item to="/account/rel"><i class="fa fa-users"/> Thân Nhân
         <!-- <b-badge variant="success">{{ itemsCount }}</b-badge> -->
       </b-dropdown-item>
-      <b-dropdown-item><i class="fa fa-calendar-check-o"/> Công Làm
+      <b-dropdown-item to="/account/effort"><i class="fa fa-calendar-check-o"/> Công Làm
         <!-- <b-badge variant="success">{{ itemsCount }}</b-badge> -->
       </b-dropdown-item>
-      <b-dropdown-item><i class="fa fa-money"/> Lương Tháng
+      <b-dropdown-item to="/account/psalary"><i class="fa fa-money"/> Lương Tháng
         <!-- <b-badge variant="success">{{ itemsCount }}</b-badge> -->
       </b-dropdown-item>
       <b-dropdown-item to="/account/per"><i class="fa fa-key"/> Quyền

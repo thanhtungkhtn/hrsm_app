@@ -10,10 +10,10 @@ class Salary extends Model {
   labour_contract() {
     return this.hasMany('App/Models/LabourContract');
   }
-  tableTimeSalary() {
+  exportsalary() {
     return this.hasMany('App/Models/TableTimeSalary');
   }
-  timesheet() {
+  aggregateSalary() {
     return this.hasMany('App/Models/Timesheet');
   }
 }

@@ -129,6 +129,7 @@
 <script>
 // import usersData from './UsersData'
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import router from '../../../../router'
 
 export default {
   name: 'User',

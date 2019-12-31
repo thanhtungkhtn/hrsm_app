@@ -189,6 +189,7 @@
 
 <script>
   import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+  import router from '../../router'
 
   export default {
     name: 'Relation',
