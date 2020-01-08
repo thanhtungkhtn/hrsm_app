@@ -1,32 +1,31 @@
 <script>
-import { Line } from 'vue-chartjs'
-import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips'
-import { getStyle } from '@coreui/coreui/dist/js/coreui-utilities'
+import { Line } from "vue-chartjs";
+import { CustomTooltips } from "@coreui/coreui-plugin-chartjs-custom-tooltips";
+import { getStyle } from "@coreui/coreui/dist/js/coreui-utilities";
 export default {
   extends: Line,
-  props: ['height', 'width', 'data1', 'listLabel1'],
-  mounted () {
-
-    const brandPrimary = getStyle('--info') || '#20a8d8'
+  props: ["height", "width", "data1", "listLabel1"],
+  mounted() {
+    const brandPrimary = getStyle("--info") || "#20a8d8";
     const datasets1 = [
       {
-        label: 'Total number of employees',
+        label: "Total number of employees",
         backgroundColor: brandPrimary,
-        borderColor: 'rgba(255,255,255,.55)',
+        borderColor: "rgba(255,255,255)",
         data: this.data1
       }
-    ]
+    ];
 
     this.renderChart(
       {
         labels: [
-          'Phòng Nhân Sự',
-          'Phòng Kế Toán',
-          'Phòng Kinh Doanh',
-          'Phòng Kĩ Thuật',
-          'Phòng Giám Đốc',
-          'Phòng Phó Giám Đốc'
-          ],
+          "Phòng Nhân Sự",
+          "Phòng Kế Toán",
+          "Phòng Kinh Doanh",
+          "Phòng Kĩ Thuật",
+          "Phòng Giám Đốc",
+          "Phòng Phó Giám Đốc"
+        ],
         datasets: datasets1
       },
       {
@@ -42,12 +41,12 @@ export default {
           xAxes: [
             {
               gridLines: {
-                color: 'transparent',
-                zeroLineColor: 'transparent'
+                color: "transparent",
+                zeroLineColor: "transparent"
               },
               ticks: {
                 fontSize: 2,
-                fontColor: 'transparent'
+                fontColor: "transparent"
               }
             }
           ],
@@ -73,7 +72,7 @@ export default {
           }
         }
       }
-    )
+    );
   }
-}
+};
 </script>
