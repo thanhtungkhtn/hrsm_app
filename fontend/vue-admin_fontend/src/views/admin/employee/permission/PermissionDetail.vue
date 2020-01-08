@@ -5,25 +5,37 @@
         <template slot="header">
           Permision id: {{ $route.params.id }}
         </template>
-         <b-table
-            :striped="true"
-            small
-            :fixed="false"
-            responsive
-            show-empty
-            outlined
-            :items="detailData($route.params.id)" :fields="fields"
-          >
-
+        <b-table
+          :striped="true"
+          small
+          :fixed="false"
+          responsive
+          show-empty
+          outlined
+          :items="detailData($route.params.id)"
+          :fields="fields"
+        >
           <template v-slot:actions="row">
-            <b-button @click="detail(row.item, row.index, $event.target)" size="sm" class="mr-1">
-              <i class="fa fa-file-text-o fa-lg"/>
+            <b-button
+              @click="detail(row.item, row.index, $event.target)"
+              size="sm"
+              class="mr-1"
+            >
+              <i class="fa fa-file-text-o fa-lg" />
             </b-button>
-            <b-button size="sm" class="mr-1" @click="edit(row.item, row.index, $event.target)">
-              <i class="fa fa-edit fa-lg"/>
+            <b-button
+              size="sm"
+              class="mr-1"
+              @click="edit(row.item, row.index, $event.target)"
+            >
+              <i class="fa fa-edit fa-lg" />
             </b-button>
-            <b-button size="sm" @click="deletePermissionDetail(row.item)" class="mr-1">
-              <i class="fa fa-remove fa-lg"/>
+            <b-button
+              size="sm"
+              @click="deletePermissionDetail(row.item)"
+              class="mr-1"
+            >
+              <i class="fa fa-remove fa-lg" />
             </b-button>
           </template>
         </b-table>
@@ -32,34 +44,20 @@
           <b-button @click="goBack">Back</b-button>
         </template>
 
-         <!-- Detail modal -->
-        <b-modal id="detailModal" :title="infoModal.title" ok-only @hide="resetInfoModal">
+        <!-- Detail modal -->
+        <b-modal
+          id="detailModal"
+          :title="infoModal.title"
+          ok-only
+          @hide="resetInfoModal"
+        >
           <pre>{{ infoModal.content }}</pre>
           <div class="container">
-            <div class="row">
-              <!-- <div class="col-4"><strong>ID:</strong></div>
-              <div class="col">{{ infoModal.content.id }}</div>
-              <div class="w-100"></div>
-              <div class="col-4"><strong>Employee ID:</strong></div>
-              <div class="col">{{ infoModal.content.employee_id}}</div>
-              <div class="w-100"></div>
-              <div class="col-4"><strong>Name:</strong></div>
-              <div class="col">{{ infoModal.content.name }}</div>
-              <div class="w-100"></div>
-              <div class="col-4"><strong>Relationship:</strong></div>
-              <div class="col">{{ infoModal.content.relationship }}</div>
-              <div class="w-100"></div>
-              <div class="col-4"><strong>Created At:</strong></div>
-              <div class="col">{{ infoModal.content.created_at }}</div>
-              <div class="w-100"></div>
-              <div class="col-4"><strong>Updated At:</strong></div>
-              <div class="col">{{ infoModal.content.updated_at }}</div> -->
-
-            </div>
+            <div class="row"></div>
           </div>
         </b-modal>
 
-         <!-- Edit modal -->
+        <!-- Edit modal -->
         <b-modal
           :id="infoModal.id"
           :title="infoModal.title"
@@ -68,59 +66,68 @@
           <!-- <pre>{{ infoModal.content }}</pre> -->
           <b-form>
             <label class="mr-sm-2" for="inlineInput1">Permission ID: </label>
-            <b-input class="col-md-12" id="inlineInput1" type="text"
+            <b-input
+              class="col-md-12"
+              id="inlineInput1"
+              type="text"
               :value="infoModal.content.permision_id"
               disabled
             >
-            <!-- @input="setCurrentPermissionName" -->
+              <!-- @input="setCurrentPermissionName" -->
             </b-input>
             <b-row>
               <b-col sm="6">
                 <label class="mr-sm-2" for="inlineInput2">Action Name: </label>
-                <b-input class="col-md-12" id="inlineInput2" type="text" placeholder="Action Name"
+                <b-input
+                  class="col-md-12"
+                  id="inlineInput2"
+                  type="text"
+                  placeholder="Action Name"
                   :value="infoModal.content.action_name"
-
                   @input="setCurrentPermissionDetailActionName"
                 >
                 </b-input>
               </b-col>
               <b-col sm="6">
                 <label class="mr-sm-2" for="inlineInput3">Action Code: </label>
-                <b-input class="col-md-12" id="inlineInput3" type="text" placeholder="Action Code"
+                <b-input
+                  class="col-md-12"
+                  id="inlineInput3"
+                  type="text"
+                  placeholder="Action Code"
                   :value="infoModal.content.action_code"
                   @input="setCurrentPermissionDetailActionCode"
                 >
-
                 </b-input>
               </b-col>
             </b-row>
 
             <b-form-group label="Check Action.">
-                <!-- label="Gender:" label-for="gender" :label-cols="3" -->
-                <b-form-select id="check_action"
-                  :plain="true"
-                  :multiple="false"
-                  :options="[1, 0]"
-                  value=0
-                  @input="setCurrentPermissionDetailCheckAction">
-
-                </b-form-select>
+              <!-- label="Gender:" label-for="gender" :label-cols="3" -->
+              <b-form-select
+                id="check_action"
+                :plain="true"
+                :multiple="false"
+                :options="[1, 0]"
+                value="0"
+                @input="setCurrentPermissionDetailCheckAction"
+              >
+              </b-form-select>
             </b-form-group>
-
           </b-form>
-          <template v-slot:modal-footer={cancel}>
-
-            <b-button variant="primary" size="sm" @click="hideModal(infoModal.content)">
+          <template v-slot:modal-footer="{ cancel }">
+            <b-button
+              variant="primary"
+              size="sm"
+              @click="hideModal(infoModal.content)"
+            >
               Save
             </b-button>
             <b-button variant="danger" size="sm" @click="cancel()">
               Cancel
             </b-button>
-
           </template>
-
         </b-modal>
-
       </b-card>
     </b-col>
   </b-row>
@@ -128,54 +135,50 @@
 
 <script>
 // import usersData from './UsersData'
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-import router from '../../../../router'
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import router from "../../../../router";
 
 export default {
-  name: 'User',
+  name: "User",
   props: {
     caption: {
       type: String,
-      default: 'Permission id'
-    },
+      default: "Permission id"
+    }
   },
   data: () => {
     return {
-      items: (id) => {
-        // console.log(permissions)
-        // const user = usersData.find( user => user.id.toString() === id)
-        // const userDetails = user ? Object.entries(user) : [['id', 'Not found']]
-        // return userDetails.map(([key, value]) => {return {key: key, value: value}})
-      },
+      // items: id => {
+      //   // console.log(permissions)
+      //   // const user = usersData.find( user => user.id.toString() === id)
+      //   // const userDetails = user ? Object.entries(user) : [['id', 'Not found']]
+      //   // return userDetails.map(([key, value]) => {return {key: key, value: value}})
+      // },
       fields: [
-        {key: 'key', label: 'Key'},
-        {key: 'id', label: 'ID'},
-        {key: 'permision_id', label: 'Permision ID',},
-        {key: 'action_name', label: 'Action Name'},
-        {key: 'action_code', label: 'Action Code'},
-        {key: 'check_action', label: 'Check Action'},
-        {key: 'created_at', label: 'Created At'},
-        {key: 'updated_at', label: 'Updated At'},
-        {key: 'actions', label: 'Actions'}
+        { key: "key", label: "Key" },
+        { key: "id", label: "ID" },
+        { key: "permision_id", label: "Permision ID" },
+        { key: "action_name", label: "Action Name" },
+        { key: "action_code", label: "Action Code" },
+        { key: "check_action", label: "Check Action" },
+        { key: "created_at", label: "Created At" },
+        { key: "updated_at", label: "Updated At" },
+        { key: "actions", label: "Actions" }
       ],
       infoModal: {
-        id: 'info-modal',
-        title: '',
-        content: ''
+        id: "info-modal",
+        title: "",
+        content: ""
       }
-    }
+    };
   },
   computed: {
-    ...mapState('permissions', [
-      'permissions',
-    ]),
-    ...mapGetters('authentication', [
-      'isLoggedIn',
-    ]),
+    ...mapState("permissions", ["permissions"]),
+    ...mapGetters("authentication", ["isLoggedIn"])
   },
   mounted() {
     if (!this.isLoggedIn) {
-      return router.push('/pages/login');
+      return router.push("/pages/login");
     }
 
     // console.log(this.permissions)
@@ -187,72 +190,76 @@ export default {
     // this.totalRows = this.relations.results.length
   },
   methods: {
-    ...mapMutations('permissions', [
-      'setEditMode',
-      'setNewPermissionName',
-      'setCurrentPermissionName',
-      'setCurrentPermissionDetailActionName',
-      'setCurrentPermissionDetailActionCode',
-      'setCurrentPermissionDetailCheckAction'
+    ...mapMutations("permissions", [
+      "setEditMode",
+      "setNewPermissionName",
+      "setCurrentPermissionName",
+      "setCurrentPermissionDetailActionName",
+      "setCurrentPermissionDetailActionCode",
+      "setCurrentPermissionDetailCheckAction"
     ]),
-    ...mapActions('permissions', [
-      'fetchPermissions',
-      'createPermission',
-      'savePermission',
-      'deletePermission',
+    ...mapActions("permissions", [
+      "fetchPermissions",
+      "createPermission",
+      "savePermission",
+      "deletePermission",
 
-      'savePermissionDetail',
-      'deletePermissionDetail'
+      "savePermissionDetail",
+      "deletePermissionDetail"
     ]),
 
     goBack() {
-      this.$router.go(-1)
+      this.$router.go(-1);
       // this.$router.replace({path: '/users'})
     },
     detailData(id) {
       // console.log(this.permissions)
       // console.log(id)
-      const permission = this.permissions.results.find( permissions => permissions.id.toString() === id)
+      const permission = this.permissions.results.find(
+        permissions => permissions.id.toString() === id
+      );
 
-      const permissionDetails = permission ? Object.entries(permission.permisionDetail) : [['id', 'Not found']]
+      const permissionDetails = permission
+        ? Object.entries(permission.permisionDetail)
+        : [["id", "Not found"]];
       // console.log(permissionDetails)
       return permissionDetails.map(([key, value]) => {
-          // console.log(value)
-          return {
-              key: key,
-              id: value.id,
-              'permision_id': value.permision_id,
-              'action_name': value.action_name,
-              'action_code': value.action_code,
-              'check_action': value.check_action,
-              'created_at': value.created_at,
-              'updated_at': value.updated_at,
-            }
-        })
+        // console.log(value)
+        return {
+          key: key,
+          id: value.id,
+          permision_id: value.permision_id,
+          action_name: value.action_name,
+          action_code: value.action_code,
+          check_action: value.check_action,
+          created_at: value.created_at,
+          updated_at: value.updated_at
+        };
+      });
     },
 
     hideModal(infoModal) {
-      console.log(infoModal)
-      this.savePermissionDetail(infoModal)
-      this.$bvModal.hide(this.infoModal.id)
+      console.log(infoModal);
+      this.savePermissionDetail(infoModal);
+      this.$bvModal.hide(this.infoModal.id);
     },
     edit(item, index, button) {
-      this.infoModal.title = `Row index: ${index}`
-      this.infoModal.content = item
-      this.$root.$emit('bv::show::modal', this.infoModal.id, button)
+      this.infoModal.title = `Row index: ${index}`;
+      this.infoModal.content = item;
+      this.$root.$emit("bv::show::modal", this.infoModal.id, button);
     },
 
     detail(item, index, button) {
       // // console.log(item)
-      this.infoModal.title = `Index: ${index}`
+      this.infoModal.title = `Index: ${index}`;
       // // this.infoModal.content = JSON.stringify(item, null, 2)
-      this.infoModal.content = item
-      this.$root.$emit('bv::show::modal', 'detailModal', button)
+      this.infoModal.content = item;
+      this.$root.$emit("bv::show::modal", "detailModal", button);
     },
     resetInfoModal() {
-      this.infoModal.title = ''
-      this.infoModal.content = ''
-    },
+      this.infoModal.title = "";
+      this.infoModal.content = "";
+    }
   }
-}
+};
 </script>
