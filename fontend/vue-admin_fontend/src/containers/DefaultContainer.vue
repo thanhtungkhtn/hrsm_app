@@ -3,11 +3,22 @@
     <AppHeader fixed>
       <SidebarToggler class="d-lg-none" display="md" mobile />
       <b-link class="navbar-brand" to="#">
-        <img class="navbar-brand-full" src="/logo.png" width="30" height="30" alt="Logo">
+        <img
+          class="navbar-brand-full"
+          src="/logo.png"
+          width="30"
+          height="30"
+          alt="Logo"
+        />
         <!-- <img class="navbar-brand-minimized" src="logo.png" width="30" height="30" alt="CoreUI Logo"> -->
         <b>&nbsp;HRMS</b>
       </b-link>
-      <SidebarToggler class="d-md-down-none" display="lg" :defaultOpen=true />
+      <SidebarToggler
+        class="d-md-down-none"
+        display="lg"
+        :defaultOpen="true"
+        v-if="permissionName"
+      />
       <b-navbar-nav class="d-md-down-none">
         <b-nav-item class="px-3" to="/dashboard">Dashboard</b-nav-item>
         <!-- <b-nav-item class="px-3" exact>Hợp đồng</b-nav-item>
@@ -28,7 +39,6 @@
           <b-badge pill variant="danger">5</b-badge>
         </b-nav-item>
 
-
         <b-nav-item class="d-md-down-none" to="/calendar">
           <i class="icon-calendar"></i>
         </b-nav-item>
@@ -38,31 +48,30 @@
         <b-nav-item class="d-md-down-none">
           <i class="icon-location-pin"></i>
         </b-nav-item> -->
-        <DefaultHeaderDropdownAccnt v-if="isLoggedIn"/>
-
+        <DefaultHeaderDropdownAccnt v-if="isLoggedIn" />
       </b-navbar-nav>
-      <AsideToggler class="d-none d-lg-block" />
+      <!-- <AsideToggler class="d-none d-lg-block" /> -->
       <!-- <AsideToggler class="d-lg-none" mobile /> -->
     </AppHeader>
 
-<!-- Body -->
+    <!-- Body -->
     <div class="app-body">
-      <AppSidebar fixed>
-        <SidebarHeader/>
-        <SidebarForm/>
+      <AppSidebar fixed v-if="permissionName">
+        <SidebarHeader />
+        <SidebarForm />
         <SidebarNav :navItems="nav"></SidebarNav>
-        <SidebarFooter/>
-        <SidebarMinimizer/>
+        <SidebarFooter />
+        <SidebarMinimizer />
       </AppSidebar>
       <main class="main">
-        <Breadcrumb :list="list"/>
+        <Breadcrumb :list="list" />
         <div class="container-fluid">
           <router-view></router-view>
         </div>
       </main>
       <AppAside fixed>
         <!--aside-->
-        <DefaultAside/>
+        <DefaultAside />
       </AppAside>
     </div>
     <TheFooter>
@@ -80,14 +89,27 @@
 </template>
 
 <script>
-import nav from '@/_nav'
-import { Header as AppHeader, SidebarToggler, Sidebar as AppSidebar, SidebarFooter, SidebarForm, SidebarHeader, SidebarMinimizer, SidebarNav, Aside as AppAside, AsideToggler, Footer as TheFooter, Breadcrumb } from '@coreui/vue'
-import DefaultAside from './DefaultAside'
-import DefaultHeaderDropdownAccnt from './DefaultHeaderDropdownAccnt'
-import { mapGetters, mapActions } from 'vuex'
+import nav from "@/_nav";
+import {
+  Header as AppHeader,
+  SidebarToggler,
+  Sidebar as AppSidebar,
+  SidebarFooter,
+  SidebarForm,
+  SidebarHeader,
+  SidebarMinimizer,
+  SidebarNav,
+  Aside as AppAside,
+  AsideToggler,
+  Footer as TheFooter,
+  Breadcrumb
+} from "@coreui/vue";
+import DefaultAside from "./DefaultAside";
+import DefaultHeaderDropdownAccnt from "./DefaultHeaderDropdownAccnt";
+import { mapGetters, mapActions, mapState } from "vuex";
 
 export default {
-  name: 'DefaultContainer',
+  name: "DefaultContainer",
   components: {
     AsideToggler,
     AppHeader,
@@ -104,27 +126,34 @@ export default {
     SidebarNav,
     SidebarMinimizer
   },
-  data () {
+  data() {
     return {
-      nav: nav.items
-    }
+      nav: nav.items,
+      permissionName: ""
+    };
+  },
+  mounted() {
+    this.fetchPermission();
+
+    const { results } = this.permission;
+
+    this.permissionName = results.length === 0 ? false : true;
   },
   computed: {
-    name () {
-      return this.$route.name
+    name() {
+      return this.$route.name;
     },
-    list () {
-      return this.$route.matched.filter((route) => route.name || route.meta.label )
+    list() {
+      return this.$route.matched.filter(
+        route => route.name || route.meta.label
+      );
     },
-    ...mapGetters('authentication', [
-      'isLoggedIn',
-    ]),
+    ...mapGetters("authentication", ["isLoggedIn"]),
+    ...mapState("permission", ["permission"])
   },
   methods: {
-    ...mapActions('authentication', [
-      'logout',
-    ]),
-
-  },
-}
+    ...mapActions("authentication", ["logout"]),
+    ...mapActions("permission", ["fetchPermission"])
+  }
+};
 </script>
