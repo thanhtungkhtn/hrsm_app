@@ -13,13 +13,23 @@
               <hr />
               <b-row>
                 <b-col cols="6" class="text-center">
-                  <b-button @click="checkin" size="sm" variant="vimeo" class="mr-1 btn-brand">
+                  <b-button
+                    @click="checkin"
+                    size="sm"
+                    variant="vimeo"
+                    class="mr-1 btn-brand"
+                  >
                     <i class="fa fa-calendar-check-o"></i>
                     <span>CHECK_IN</span>
                   </b-button>
                 </b-col>
                 <b-col cols="6" class="text-center">
-                  <b-button @click="checkout" size="sm" variant="youtube" class="mr-1 btn-brand">
+                  <b-button
+                    @click="checkout"
+                    size="sm"
+                    variant="youtube"
+                    class="mr-1 btn-brand"
+                  >
                     <i class="fa fa-calendar-times-o"></i>
                     <span>CHECK_OUT</span>
                   </b-button>
@@ -51,13 +61,18 @@
                   </div>
                   <br />
                   <div class="fields">
-                    <b-button @click="onSubmit" size="sm" variant="vimeo" class="mr-1 btn-brand">
+                    <b-button
+                      @click="onSubmit"
+                      size="sm"
+                      variant="vimeo"
+                      class="mr-1 btn-brand"
+                    >
                       <i class="fa fa-calendar-check-o"></i>
                       <span>CHECK_IN</span>
                     </b-button>
                   </div>
                   <div class="message">
-                    <h5>{{message}}</h5>
+                    <h5>{{ message }}</h5>
                   </div>
                 </form>
               </div>
@@ -74,7 +89,12 @@
               <div class="file">
                 <form method="POST" enctype="multipart/form-data">
                   <div class="fields">
-                    <input type="file" ref="fileOut" name="image" @change="onSelectOut" />
+                    <input
+                      type="file"
+                      ref="fileOut"
+                      name="image"
+                      @change="onSelectOut"
+                    />
                   </div>
                   <br />
                   <div class="fields">
@@ -89,7 +109,7 @@
                     </b-button>
                   </div>
                   <div class="message">
-                    <h5>{{message}}</h5>
+                    <h5>{{ message }}</h5>
                   </div>
                 </form>
               </div>
@@ -111,15 +131,15 @@
           <b-col cols="5" v-show="showPreview">
             <p>
               Name:
-              <b>{{nameImg}}</b>
+              <b>{{ nameImg }}</b>
             </p>
             <p>
               Type:
-              <b>{{typeImg}}</b>
+              <b>{{ typeImg }}</b>
             </p>
             <p>
               Size:
-              <b>{{sizeImg}}</b> (bytes)
+              <b>{{ sizeImg }}</b> (bytes)
             </p>
           </b-col>
         </b-row>
@@ -178,7 +198,11 @@
 
           <template v-slot:actions="row">
             <div style="width: 180px">
-              <b-button @click="detail(row.item, row.index, $event.target)" size="sm" class="mr-1">
+              <b-button
+                @click="detail(row.item, row.index, $event.target)"
+                size="sm"
+                class="mr-1"
+              >
                 <i class="fa fa-file-text-o fa-lg" />
               </b-button>
             </div>
@@ -197,7 +221,12 @@
         </nav>
 
         <!-- Detail modal -->
-        <b-modal id="detailModal" :title="infoModal.title" ok-only @hide="resetInfoModal">
+        <b-modal
+          id="detailModal"
+          :title="infoModal.title"
+          ok-only
+          @hide="resetInfoModal"
+        >
           <pre>{{ infoModal.content }}</pre>
           <div class="container">
             <div class="row"></div>
@@ -207,7 +236,7 @@
     </b-row>
   </b-container>
   <b-col v-else>
-    <b-alert show variant="warning">{{message}}</b-alert>
+    <b-alert show variant="warning">{{ message }}</b-alert>
   </b-col>
 </template>
 
@@ -321,7 +350,7 @@ export default {
   },
   mounted() {
     this.fetchCong();
-    // this.timer = setInterval(this.fetchCong, 2000);
+    this.timer = setInterval(this.fetchCong, 2000);
 
     if (!this.isLoggedIn) {
       return router.push("/pages/login");
